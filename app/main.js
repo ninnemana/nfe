@@ -10,12 +10,12 @@ require.config({
 var hoverState = false;
 require(['jquery'], function ($) {
     $('.carousel .dots').show();
-    $(document).on('click','.carousel .dots a',function(e){
+    $(document).on('click','.carousel .dots li',function(e){
         if (e.preventDefault){
             e.preventDefault();
         }
         $('.carousel .tab').fadeOut();
-        $('.carousel ' + $(this).attr('href')).fadeIn();
+        $('.carousel ' + $(this).find('a').attr('href')).fadeIn();
     });
 
     var rotateInterval = 7000;
